@@ -349,7 +349,7 @@ struct TORCH_API ClassValue : public SugaredValue {
       const std::string& field) override;
 
   std::string kind() const override {
-    return type_->str();
+    return "Class Type: " + type_->str();
   }
 
   ClassTypePtr type_;
@@ -366,7 +366,7 @@ struct TORCH_API NamedTupleConstructor : public SugaredValue {
       size_t n_binders) override;
 
   std::string kind() const override {
-    return type_->str();
+    return "namedtuple constructor: " + type_->str();
   }
 
   TupleTypePtr type_;
